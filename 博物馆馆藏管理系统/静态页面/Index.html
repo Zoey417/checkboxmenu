@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+	<link href="css/main.css" rel="stylesheet" />
+	<!--<script src="js/jquery-1.9.1.min.js"></script>-->
+	<script src="js/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(function () {
+		/**工作首页点击***/
+		$(document).on("click",".firstPageIndex",function(){
+			$(".firstPageShow").show();
+			$(".centerContain").hide();
+			$(".menuContain").removeClass("titleContain-selected");
+		});
+		/**头部菜单的点击事件**/
+		$(".menuContain").click(function () {
+			$(".firstPageShow").hide();
+			$(".centerContain").show();
+			$(".menuContain").removeClass("titleContain-selected");
+			$(this).addClass("titleContain-selected");
+		});
+		/**头部菜单的hover事件***/
+		$(".menuContain").hover(function () {
+			$(this).find(".menuTitle").addClass("menuHover");
+		}, function () {
+			$(this).find(".menuTitle").removeClass("menuHover");
+		});
+		/**左侧菜单的选择事件**/
+		$(document).on("click", ".subtitle", function () {
+			//var src = $(this).attr("data-frame");
+			$(".subtitle").each(function () {
+				$(this).removeClass("sub-selected");
+				$(this).siblings(".leftTitle").removeClass("title-selected");
+				$(this).parent().removeClass("selectedContain");
+			});
+			$(this).addClass("sub-selected")
+			$(this).siblings(".leftTitle").addClass("title-selected");
+			$(this).parent().addClass("selectedContain");
+			if ($(this).html() == "征集录入") {
+				$("iframe").attr("src", "ancientEnter.html");
+			}
+			else if ($(this).html() == "征集流程") {
+				$("iframe").attr("src", "processSearch.html");
+			}
+			else if ($(this).html() == "征集查询") {
+				$("iframe").attr("src", "enterSearch.html");
+			}
+			else if ($(this).html() == "征集统计") {
+				$("iframe").attr("src", "summary.html");
+			}
+			else if ($(this).html() == "登编管理") {
+				$("iframe").attr("src", "givenNum.html");
+			}
+			else if ($(this).html() == "点交管理") {
+				$("iframe").attr("src", "handIn.html");
+			}
+			else if ($(this).html() == "总账查询") {
+				$("iframe").attr("src", "processSearch.html");
+			}
+			else if ($(this).html() == "出入库流程") {
+				$("iframe").attr("src", "processSearch.html");
+			}
+			else if ($(this).html() == "学术研究") {
+				$("iframe").attr("src", "processSearch.html");
+			}
+			else if ($(this).html() == "业务总量") {
+				$("iframe").attr("src", "processSearch.html");
+			}
+			else if ($(this).html() == "出库流程") {
+				$("iframe").attr("src", "outProcess.html");
+			}
+			else if ($(this).html() == "检索借阅") {
+				$("iframe").attr("src", "searchBorrow.html");
+			}
+			else {
+				$("iframe").attr("src", "404.html");
+			}
+		});
+		/**头部菜单控制左侧菜单**/
+		var manageBefore = [
+			["文物征集", ["征集统计", "征集查询", "征集流程", "征集录入"]],
+			["文物登编", ["文物建卡", "文物审核", "影像上传", "登编管理"]],
+			["入库点交", ["点交查询", "点交管理"]],
+		]
+		var ancientSum = [
+			["总账查询", []],
+			["账目输出", []],
+			["编目维护", []],
+			["文物注销", []],
+			["报表管理", []]
+		]
+		var ancientInOut = [
+			["出入库流程", ["入库流程", "出库流程"]],
+			["出入库查询", []],
+			["方位管理", []]
+		]
+		var ancientUse = [
+			["学术研究", ["成果归档", "检索借阅"]],
+			["陈列宣传", []],
+			["文物保护", []]
+		]
+		var ancientSummary = [
+			["业务总量", []],
+			["工作总量", []],
+			["影像数量统计", []],
+			["藏品动态统计", []]
+		]
+		$(".menuContain").click(function () {
+			var title = $(this).attr("data-title");
+			$(".leftContain").html("");
+				if ($(this).attr("data-title") == "manageBefore") {
+					for (var i = 0; i < manageBefore.length; i++) {
+						$(".leftContain").append('<div class="leftMenuContain"><div class="leftTitle title' + i + '">' + manageBefore[i][0] + '</div></div>');
+						for (var j = 0; j < manageBefore[i][1].length; j++) {
+							$(".title" + i + "").after('<div class="subtitle">' + manageBefore[i][1][j] + '</div>');
+						}
+					}
+					grantedColor();
+				}
+				else if ($(this).attr("data-title") == "ancientSum") {
+					for (var i = 0; i < ancientSum.length; i++) {
+						$(".leftContain").append('<div class="leftMenuContain"><div class="leftTitle title' + i + '">' + ancientSum[i][0] + '</div></div>');
+						for (var j = 0; j < ancientSum[i][1].length; j++) {
+							$(".title" + i + "").after('<div class="subtitle">' + ancientSum[i][1][j] + '</div>');
+						}
+					}
+					grantedColor();
+					$("iframe").attr("src", "searchData.html");
+				}
+				else if ($(this).attr("data-title") == "ancientInOut") {
+					for (var i = 0; i < ancientInOut.length; i++) {
+						$(".leftContain").append('<div class="leftMenuContain"><div class="leftTitle title' + i + '">' + ancientInOut[i][0] + '</div></div>');
+						for (var j = 0; j < ancientInOut[i][1].length; j++) {
+							$(".title" + i + "").after('<div class="subtitle">' + ancientInOut[i][1][j] + '</div>');
+						}
+					}
+					grantedColor();
+					$("iframe").attr("src", "outProcess.html");
+				}
+				else if ($(this).attr("data-title") == "ancientUse") {
+					for (var i = 0; i < ancientUse.length; i++) {
+						$(".leftContain").append('<div class="leftMenuContain"><div class="leftTitle title' + i + '">' + ancientUse[i][0] + '</div></div>');
+						for (var j = 0; j < ancientUse[i][1].length; j++) {
+							$(".title" + i + "").after('<div class="subtitle">' + ancientUse[i][1][j] + '</div>');
+						}
+					}
+					grantedColor();
+					$("iframe").attr("src", "searchBorrow.html");
+				}
+				else if ($(this).attr("data-title") == "ancientSummary") {
+					for (var i = 0; i < ancientSummary.length; i++) {
+						$(".leftContain").append('<div class="leftMenuContain"><div class="leftTitle title' + i + '">' + ancientSummary[i][0] + '</div></div>');
+						for (var j = 0; j < ancientSummary[i][1].length; j++) {
+							$(".title" + i + "").after('<div class="subtitle">' + ancientSummary[i][1][j] + '</div>');
+						}
+					}
+					$(".leftMenuContain").eq(2).addClass("selectedContain");
+					$(".leftTitle").eq(2).addClass("title-selected");
+					$("iframe").attr("src", "summaryPie.html");
+				}
+		});
+		function grantedColor() {
+			$(".leftTitle").eq(0).addClass("title-selected");
+			$(".subtitle").eq(0).click();
+			$(".leftMenuContain").eq(0).addClass("selectedContain");
+		}
+	});
+</script>
+	<div class="mainContain">
+		<div class="main">
+			<div class="headContain">
+			<div class="titleInfo">
+			<div class="headUp">
+				<div class="mainTitle">山东博物馆</div>
+				<div class="subTitle">-&nbsp馆藏文物管理系统</div>
+			</div>
+			<div class="headDown subTitle">Shandong&nbsp&nbspMuseum</div>
+			</div>
+			<div class="userInfo">
+			<div class="firstPageIndex"><div class="pic"></div>首页</div>
+			<div class="toolContain"><div class="tool"></div>系统设置</div>
+			<div>用户:张小娴</div>
+			<div class="exit"><a href="login.html">|退出</a></div>
+			<div></div>
+			</div>
+			</div>
+			<div class="topContain">
+				<div class="menuContain" data-title="manageBefore">
+					<div class="imgContain">
+						<div class="AncientManage"></div>
+					</div>
+					<div class="menuTitle">入藏前管理</div>
+				</div>
+				<div class="menuContain" data-title="ancientSum">
+					<div class="imgContain">
+						<div class="AncientNum"></div>
+					</div>
+					<div class="menuTitle">账目管理</div>
+				</div>
+				<div class="menuContain" data-title="ancientInOut">
+					<div class="imgContain">
+						<div class="AncientShow"></div>
+					</div>
+					<div class="menuTitle">出入库管理</div>
+				</div>
+				<div class="menuContain" data-title="ancientUse">
+					<div class="imgContain">
+						<div class="AncientSearch"></div>
+					</div>
+					<div class="menuTitle">馆藏应用</div>
+				</div>
+				<div class="menuContain" data-title="ancientSummary">
+					<div class="imgContain">
+						<div class="AncientSummary"></div>
+					</div>
+					<div class="menuTitle">查询统计</div>
+				</div>
+			</div>
+			<div class="centerContain">
+				<div class="leftContain">
+					<div class="leftTitle firstPageIndex">首页</div>
+					<div class="leftMenuContain selectedContain">
+						<div class="leftTitle title-selected">文物征集</div>
+						<div class="subtitle sub-selected" data-frame="ancientEnter.html">征集录入</div>
+						<div class="subtitle" data-frame="processSearch.html">征集流程</div>
+						<div class="subtitle">征集查询</div>
+						<div class="subtitle">征集统计</div>
+					</div>
+					<div class="leftMenuContain">
+						<div class="leftTitle">文物登编</div>
+						<div class="subtitle">登编管理</div>
+						<div class="subtitle">影像上传</div>
+						<div class="subtitle">文物审核</div>
+						<div class="subtitle">文物建卡</div>
+					</div>
+					<div class="leftMenuContain">
+						<div class="leftTitle">入库点交</div>
+						<div class="subtitle">点交管理</div>
+						<div class="subtitle">点交查询</div>
+					</div>
+				</div>
+				<div class="rightContain">
+					<div class="iframeContain">
+						<iframe src="ancientEnter.html"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="firstPageShow">
+					<div class="leftContainFirst">
+						<div class="leftMenuContainFirst">
+						<div class="leftTitleFirst selected">工作首页</div>
+						</div>
+						<div class="leftMenuContainFirst">
+						<div class="leftTitleFirst">库存统计</div>
+						</div>
+						<div class="leftMenuContainFirst">
+						<div class="leftTitleFirst">出库提醒</div>
+						</div>
+						<div class="leftMenuContainFirst">
+						<div class="leftTitleFirst">入库提醒</div>
+						</div>
+						<div class="leftMenuContainFirst">
+						<div class="leftTitleFirst">方位管理</div>
+					</div>
+				</div>
+							<div class="rightContentFirst">
+								<div class="ancientEnter normalContain" style="padding-bottom:80px;">
+									<div class="titlePic">工作首页</div>
+										<img style="width:360px;" src="pics/pieChartFirst.jpg">
+										<img style="width:365px" src="pics/barchartFirst.jpg">
+									<div class="contain outTip">
+										<div class="tipTitle">
+											<div class="title">出库提醒</div>
+											<div class="button Sbutton">更多</div>
+										</div>
+										<div class="tipContent">【出库申请】2015-05-17 彩陶壶 <div class="tipButton red">未处理</div></div>
+										<div class="tipContent">【出库申请】2015-04-08 灰陶豆 <div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【已出库】2015-03-22 彩陶背壶<div class="tipButton red">未处理</div></div>
+										<div class="tipContent">【出库取消】2015-03-21白陶桶形豆<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库申请】2015-02-17 彩陶壶<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库申请】2015-01-30  红陶兽形壶<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库取消】2015-01-23 网纹彩陶壶<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库申请】2014-12-20 涡纹彩陶壶<div class="tipButton green">已处理</div></div>
+									</div>
+									<div class="contain inTip">
+											<div class="tipTitle">
+											<div class="title">入库提醒</div>
+											<div class="button Sbutton">更多</div>
+										</div>
+										<div class="tipContent">【入库申请】2015-05-17 彩陶壶<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【入库申请】2015-04-08 灰陶豆<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【已入库】2015-03-22 彩陶背壶<div class="tipButton red">未处理</div></div>
+										<div class="tipContent">【入库取消】2015-03-21白陶桶形豆<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【入库申请】2015-02-17 彩陶壶   <div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库申请】2015-01-30  红陶兽形壶<div class="tipButton red">未处理</div></div>
+										<div class="tipContent">【出库取消】2015-01-23 网纹彩陶壶<div class="tipButton green">已处理</div></div>
+										<div class="tipContent">【出库申请】2014-12-20 涡纹彩陶壶<div class="tipButton green">已处理</div></div>
+									</div>
+								</div>	
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

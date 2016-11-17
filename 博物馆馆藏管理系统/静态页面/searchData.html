@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<meta charset="utf-8" />
+<link href="css/main.css" rel="stylesheet" />
+<script src="js/jquery-3.0.0.min.js"></script>
+<style type="text/css">
+.ancientEnter .checkContainBorder {
+border: 1px solid #ccc;
+padding-bottom: 10px;
+margin-left: 57px;
+}
+.ancientEnter {
+width:748px;
+}
+.ancientEnter .rightInputContain {
+margin-left:74px;
+}
+</style>
+</head>
+<body>
+	<div class="ancientEnter normalContain">
+		<div class="titlePic">总账查询</div>
+	
+		<div class="centerContent">
+			<div>
+			<div class="containNav">指标选择:</div>
+			<div class="checkBoxContain"><input type="checkbox" />全选</div>
+			<div class="button Mbutton">模板选择</div>
+			<div>
+				<div class="rightInputContain checkContainBorder" style="margin-top:0;">
+					<div class="checkBoxContain">
+						<input type="checkbox" />总登记号
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" checked />文物名称
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />年代
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />质地
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" checked/>尺寸
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />质量
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox"checked />文物来源
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />完残程度
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />形态特征
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" checked />题识情况
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />流传经历
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />级别
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />鉴定意见
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />鉴定人
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />制卡人
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />制卡日期
+					</div>
+					<div class="checkBoxContain">
+						<input type="checkbox" />照片
+					</div>
+				</div>
+				</div>
+				<div class="containNav">检索依据:</div>
+				<div class="checkBoxContain"><input type="checkbox" />隐藏依据</div>
+				<div class="button Mbutton">查询</div>
+				<div>
+					<div>
+						<div class="containNav">征集来源:</div>
+						<div class="checkBoxContain"><input type="checkbox" />个人</div>
+						<div class="checkBoxContain"><input type="checkbox" />单位</div>
+					</div>
+					<div>
+						<div class="containNav">完残程度:</div>
+						<div class="rightInputContain">
+							<div class="checkBoxContain">
+								<input type="checkbox" />完整
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />基本完整
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />微残
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />重残
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />缺失
+							</div>
+						</div>
+						<div class="containNav">类别:</div>
+						<div class="rightInputContain">
+							<div class="checkBoxContain">
+								<input type="checkbox" checked />石器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />石刻
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />玉器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />陶器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" checked />瓷器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" checked />砖瓦
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />铜器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />金银器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />其他金属器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />木器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />书法
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />绘画
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />织秀
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" checked />雕刻造像
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />甲骨简牍
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />文具
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />货币
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />印信
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />近现代
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />文献文书
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />漆器
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />民俗文物
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />少数民族文物
+							</div>
+							<div class="checkBoxContain">
+								<input type="checkbox" />杂项
+							</div>
+						</div>
+						<div>
+							<div class="containNav">级别:</div>
+							<div class="rightInputContain">
+								<div class="checkBoxContain">
+									<input type="checkbox" />一级
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />二级
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />三级
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />一般
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />未定级
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />参考品
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />其他
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="containNav">价格:</div>
+							<div class="rightInputContain">
+								<div class="checkBoxContain">
+									<input type="checkbox" />10万以下
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />10——50万
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />50万以上
+								</div>
+								<div class="checkBoxContain">
+									<input type="checkbox" />未定
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="bottomTable">
+		<div class="leftScrollContain" style="margin-top:17px;height:536px;">
+			<div class="scroll" style="margin-top:0;height:536px;"></div>
+			<div class="ancientTitle title-selected">涡纹彩陶壶 </div>
+			<div class="ancientTitle">网纹彩陶壶</div>
+			<div class="ancientTitle">彩陶壶</div>
+			<div class="ancientTitle">红陶兽形壶</div>
+			<div class="ancientTitle">彩陶背壶 </div>
+			<div class="ancientTitle">灰陶背壶 </div>
+			<div class="ancientTitle">白陶筒形豆 </div>
+			<div class="ancientTitle">黑陶镂孔豆  </div>
+			<div class="ancientTitle">灰陶豆 </div>
+		</div>
+		<div class="rightTableContain" style="margin-top:17px;">
+			<div class="tableTitleName">藏品基本信息</div>
+			<div class="picTable">
+				<div class="picContain"></div>
+				<div class="rightTable">
+					<table class="commonTable" style="width:460px">
+						<tr>
+							<td style="width:100px;">【类别】</td>
+							<td>陶瓷器</td>
+						</tr>
+						<tr>
+							<td>【年代】</td>
+							<td>北宋</td>
+						</tr>
+						<tr>
+							<td>【文物原因】</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>【文物现状】</td>
+							<td>现藏上海博物馆</td>
+						</tr>
+						<tr>
+							<td>【简介】</td>
+							<td>高4.8厘米，口径23.3厘米<br />泥质红陶。直颈上侈成口，扁圆腹下收为平底，肩部置两凸钮。器表磨光并涂红色陶衣，腹部饰黑地白彩涡纹带一周。</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="button Mbutton" style="float:right;margin-top:10px;margin-right:11px;">更多藏品</div>
+			<div class="tableTitleName" style="padding-top:35px">藏品收集记录</div>
+			<div>
+				<table class="commonTable" id="commonTable">
+					<tr>
+						<td>登记号</td>
+						<td>收集单位</td>
+						<td>数据来源</td>
+						<td>收集日期</td>
+						<td>藏品级别</td>
+						<td>相关资料</td>
+					</tr>
+					<tr>
+						<td>TC20112</td>
+						<td>曲阳县博物馆</td>
+						<td>挖掘</td>
+						<td>1988-07-06</td>
+						<td>一级</td>
+						<td><div class="button Sbutton">查看</div></td>
+					</tr>
+					<tr>
+						<td>TC20114</td>
+						<td>上海博物馆</td>
+						<td>征集</td>
+						<td>1990-08-06</td>
+						<td>一级</td>
+						<td><div class="button Sbutton">查看</div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="tableTitleName">藏品鉴定记录</div>
+			<div>
+				<table class="commonTable" id="commonTable" style="width:623px;">
+					<tr>
+						<td>鉴定时间</td>
+						<td>鉴定机构</td>
+						<td>鉴定人员</td>
+						<td>鉴定级别</td>
+						<td>相关资料</td>
+					</tr>
+					<tr>
+						<td>1988-07-22</td>
+						<td>上海博物馆</td>
+						<td>王佳俊</td>
+						<td>一级</td>
+						<td><div class="button Sbutton">查看</div></td>
+					</tr>
+					<tr>
+						<td>1998-07-06</td>
+						<td>故宫博物馆</td>
+						<td>唐寅年</td>
+						<td>一级</td>
+						<td><div class="button Sbutton">查看</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		</div>
+		<div class="bottomTable" style="height:300px;">
+			<div class="tableTitleName" style="margin-top:16px;">藏品入库记录:</div>
+			<table class="commonTable" id="commonTable" style="width:762px;">
+				<tr>
+					<td>展出时间</td>
+					<td>结束日期</td>
+					<td>展览名称</td>
+					<td>展览场所</td>
+					<td>展览城市</td>
+					<td>相关资料</td>
+				</tr>
+				<tr>
+					<td>1999-04-20</td>
+					<td>1999-05-20</td>
+					<td>香港展览局国宝春季特展</td>
+					<td>香港博物馆</td>
+					<td>香港</td>
+					<td><div class="button Sbutton">查看</div></td>
+				</tr>
+				<tr>
+					<td>2008-03-06</td>
+					<td>2008-05-06</td>
+					<td>台湾地区春季特展</td>
+					<td>台湾故宫博物馆</td>
+					<td>台北</td>
+					<td><div class="button Sbutton">查看</div></td>
+				</tr>
+			</table>
+			<div class="tableTitleName" style="margin-top:8px;">藏品研究记录:</div>
+			<table class="commonTable" id="commonTable" style="width:762px;">
+				<tr>
+					<td>展出时间</td>
+					<td>结束日期</td>
+					<td>藏品级别</td>
+					<td>展览场所</td>
+					<td>展览城市</td>
+					<td>相关资料</td>
+				</tr>
+				<tr>
+					<td>1998-04-20</td>
+					<td>1998-05-20</td>
+					<td>一级</td>
+					<td>香港博物馆</td>
+					<td>香港</td>
+					<td><div class="button Sbutton">查看</div></td>
+				</tr>
+				<tr>
+					<td>2009-03-06</td>
+					<td>2009-05-06</td>
+					<td>二级</td>
+					<td>台湾故宫博物馆</td>
+					<td>台北</td>
+					<td><div class="button Sbutton">查看</div></td>
+				</tr>
+			</table>
+			<div style="text-align:center; padding-bottom:20px;">
+				<div class="button Mbutton">导出</div>
+				<div class="button Mbutton">打印</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
